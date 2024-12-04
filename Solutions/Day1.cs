@@ -12,13 +12,19 @@ public class Day1 : ExerciseSolution
 
     private void ParseInput(string input)
     {
-        string[] lines = input.Split(Environment.NewLine);
+        string[] lines = input.Split("\n");
 
         foreach (string line in lines)
         {
             string[] parts = line.Split("   ");
-            _list1.Add(int.Parse(parts[0]));
-            _list2.Add(int.Parse(parts[1]));
+            int val2 = 0;
+            bool success = int.TryParse(parts[0], out int val1) && int.TryParse(parts[1], out val2);
+
+            if (success)
+            {
+                _list1.Add(val1);
+                _list2.Add(val2);
+            }
         }
     }
     

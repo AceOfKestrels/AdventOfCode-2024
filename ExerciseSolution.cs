@@ -30,7 +30,7 @@ public abstract class ExerciseSolution
     {
         Console.WriteLine("Testing connection to adventofcode.com");
         HttpClient http = new();
-        http.DefaultRequestHeaders.Add("Cookie", "session=" + Program.SessionCookie);
+        http.DefaultRequestHeaders.Add("Cookie", Program.SessionCookie);
         _input = await http.GetStringAsync($"https://adventofcode.com/2024/day/{Day()}/input");
     }
 
