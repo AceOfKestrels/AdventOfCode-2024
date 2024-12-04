@@ -13,8 +13,11 @@ public abstract class ExerciseSolution
         using StreamReader reader = new(readStream);
         Console.WriteLine(reader.ReadToEnd());
 
+        Console.WriteLine("Solution:");
+        
         Solve();
 
+        Console.WriteLine();
         Console.WriteLine("Press any key to return.");
         Console.ReadKey();
     }
