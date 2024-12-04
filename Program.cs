@@ -1,10 +1,13 @@
-﻿namespace AdventOfCode_2024;
+﻿using AdventOfCode_2024.Solutions;
+
+namespace AdventOfCode_2024;
 
 class Program
 {
 
     private static readonly List<ExerciseSolution> Solutions =
     [
+        new Day1()
     ];
 
     static void Main()
@@ -16,11 +19,12 @@ class Program
 
     private static bool Start()
     {
+        Console.Clear();
         Console.WriteLine("0 - Exit");
 
         for (int i = 1; i <= Solutions.Count; i++)
         {
-            Console.WriteLine($"{i} - {Solutions[i - 1].Name}");
+            Console.WriteLine($"{i} - {Solutions[i - 1].Name()}");
         }
 
         Console.WriteLine();
