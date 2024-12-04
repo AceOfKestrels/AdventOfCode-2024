@@ -7,7 +7,8 @@ class Program
 
     private static readonly List<ExerciseSolution> Solutions =
     [
-        new Day1()
+        new Day1(),
+        new Day2()
     ];
 
     static void Main()
@@ -30,9 +31,7 @@ class Program
         Console.WriteLine();
         string? input = Console.ReadLine();
 
-        int inputValue;
-
-        if (!int.TryParse(input, out inputValue))
+        if (!int.TryParse(input, out int inputValue))
             return true;
 
         if (inputValue == 0)

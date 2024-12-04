@@ -3,13 +3,10 @@
 public class Day1 : ExerciseSolution
 {
 
-    public override string Name()
-    {
-        return "Day 1 - Historian Hysteria";
-    }
+    public override string Name() => "Day 1 - Historian Hysteria";
 
-    private List<int> _list1 = [3, 4, 2, 1, 3, 3];
-    private List<int> _list2 = [4, 3, 5, 3, 9, 3];
+    private List<int> _list1 = [];
+    private List<int> _list2 = [];
     
     private void Setup()
     {
