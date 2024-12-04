@@ -6,8 +6,8 @@ public class Day3: ExerciseSolution
 {
 
     public override string Name() => "Day 3 - Mull It Over";
+    public override int Day() => 3;
 
-    private string _input = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))";
     private string _regex = @"mul\(([0123456789,]+)\)";
 
     protected override void Solve()

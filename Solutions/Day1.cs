@@ -5,24 +5,26 @@ public class Day1 : ExerciseSolution
 
     public override string Name() => "Day 1 - Historian Hysteria";
 
+    public override int Day() => 1;
+
     private List<int> _list1 = [];
     private List<int> _list2 = [];
-    
-    private void Setup()
-    {
-        Random rand = new();
-        int amount = rand.Next(5, 20);
 
-        for (int i = 0; i < amount; i++)
+    private void ParseInput(string input)
+    {
+        string[] lines = input.Split(Environment.NewLine);
+
+        foreach (string line in lines)
         {
-            _list1.Add(rand.Next(5, 20));
-            _list2.Add(rand.Next(5, 20));
+            string[] parts = line.Split("   ");
+            _list1.Add(int.Parse(parts[0]));
+            _list2.Add(int.Parse(parts[1]));
         }
     }
-
+    
     protected override void Solve()
     {
-        Setup();
+        ParseInput(_input);
         
         Console.WriteLine("List 1: " + string.Join(',', _list1));
         Console.WriteLine("List 2: " + string.Join(',', _list2));

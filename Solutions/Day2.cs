@@ -4,32 +4,31 @@ public class Day2 : ExerciseSolution
 {
 
     public override string Name() => "Day 2 - Red-Nosed Reports";
+    public override int Day() => 2;
 
     private int[][] _reports = [];
 
-    private void Setup()
+    private void ParseInput(string input)
     {
-        Random rand = new();
-        int amount = rand.Next(5, 20);
+        string[] reports = input.Split(Environment.NewLine);
+        _reports = new int[reports.Length][];
 
-        _reports = new int[amount][];
-
-        for (int i = 0; i < amount; i++)
+        for (int i = 0; i < reports.Length; i++)
         {
-            int levelsAmount = rand.Next(3, 10);
-            _reports[i] = new int[levelsAmount];
+            string[] levels = input.Split(" ");
+            _reports[i] = new int[levels.Length];
 
-            for (int j = 0; j < levelsAmount; j++)
+            for (int j = 0; j < levels.Length; j++)
             {
-                _reports[i][j] = rand.Next(1, 10);
+                _reports[i][j] = int.Parse(levels[j]);
             }
         }
     }
 
     protected override void Solve()
     {
-        Setup();
-
+        ParseInput(_input);
+        
         foreach (int[] report in _reports)
         {
             foreach (int level in report)
