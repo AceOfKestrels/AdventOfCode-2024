@@ -28,10 +28,18 @@ public abstract class ExerciseSolution
 
     private async Task FetchInput()
     {
-        Console.WriteLine("Testing connection to adventofcode.com");
+        Console.WriteLine("Fetching input...");
         HttpClient http = new();
         http.DefaultRequestHeaders.Add("Cookie", Program.SessionCookie);
-        _input = await http.GetStringAsync($"https://adventofcode.com/2024/day/{Day()}/input");
+
+        try
+        {
+            _input = await http.GetStringAsync($"https://adventofcode.com/2024/day/{Day()}/input");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 
     public abstract string Name();

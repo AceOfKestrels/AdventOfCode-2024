@@ -32,9 +32,6 @@ public class Day1 : ExerciseSolution
     {
         ParseInput(_input);
         
-        Console.WriteLine("List 1: " + string.Join(',', _list1));
-        Console.WriteLine("List 2: " + string.Join(',', _list2));
-        
         _list1.Sort();
         _list2.Sort();
 
